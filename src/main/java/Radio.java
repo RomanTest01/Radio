@@ -21,7 +21,7 @@ public class Radio {
         int next = currentStation + 1;
 
         currentStation = next;
-        if (next > 9) {
+        if (currentStation > 9) {
             currentStation = 0;
         }
 
@@ -31,7 +31,7 @@ public class Radio {
         int prev = currentStation - 1;
 
         currentStation = prev;
-        if (prev < 0) {
+        if (currentStation < 0) {
             currentStation = 9;
         }
     }

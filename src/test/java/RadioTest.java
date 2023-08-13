@@ -54,6 +54,18 @@ public class RadioTest {
     }
 
     @Test
+    public void ShouldNextNotMoreMaxStation(){
+        Radio station= new Radio();
+        station.setCurrentStation(7);
+
+        station.nextRadioStation();
+
+        int expected = 8;
+        int actual = station.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
     public void shouldPrevRadioStation() {
         Radio station = new Radio();
         station.setCurrentStation(-1);
@@ -67,6 +79,18 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void shouldPrevNotMinStation(){
+        Radio station= new Radio();
+        station.setCurrentStation(2);
+
+        station.prevRadioStation();
+
+        int expected = 1;
+        int actual = station.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
     //тесты на громкость
 
     @Test
